@@ -8,7 +8,7 @@ function [distance, previus] = dijkstra(G, s) %G é conjunto de v(vertices) e e(
   previus(index) = index;
   looked = zeros(1, n);
 
-  while all(looked) ~= 1
+  while any(looked) == 0
     m = inf;
     index = -1;
     for i = 1:n
