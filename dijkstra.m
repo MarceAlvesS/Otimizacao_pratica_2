@@ -1,5 +1,4 @@
 function [distance, previus] = dijkstra(G, s) %G é conjunto de v(vertices) e e(arestas)
-
   n = length(G.v);
   distance = inf(1, n);
   previus = zeros(1, n) - 1;
@@ -9,7 +8,6 @@ function [distance, previus] = dijkstra(G, s) %G é conjunto de v(vertices) e e(
   previus(index) = s;
   looked = zeros(1, n);
 
-  index = 1;
   while all(looked) ~= 1
     m = inf;
     index = -1;
@@ -21,7 +19,7 @@ function [distance, previus] = dijkstra(G, s) %G é conjunto de v(vertices) e e(
     endfor
 
     if index == -1
-      disp("Grafo disconexo, alguns caminhos não foram possíveis encontrar")
+      disp("Grafo disconexo, alguns caminhos não foram possíveis de encontrar")
       break
     endif
 
