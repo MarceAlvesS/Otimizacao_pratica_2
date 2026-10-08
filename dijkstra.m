@@ -5,7 +5,7 @@ function [distance, previus] = dijkstra(G, s) %G é conjunto de v(vertices) e e(
 
   index = find(G.v ==  s);
   distance(index) = 0;
-  previus(index) = s;
+  previus(index) = index;
   looked = zeros(1, n);
 
   while all(looked) ~= 1
