@@ -57,5 +57,7 @@ function [G] = matriz_grafo(M)
     G = struct();
     G.v = V;
     G.e = E;
+    G.m = m;
+    G.n = n;
 
 end
