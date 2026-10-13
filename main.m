@@ -1,6 +1,5 @@
-pkg load image % carrega bibliotecs "image package"
+pkg load image 
 
-% carrega a imagem original
 caminho = "labirinto.jpg";
 img = imread(caminho);
 
@@ -9,12 +8,8 @@ figure(1);
 imshow(img);
 title("Imagem original do labirinto");
 
-% chama a função processar_imagem
+% processa a imagem
 [~, img_redimen] = processar_imagem(img);
-
-% exibe a matriz numérica do labirinto
-disp("Matriz binária do labirinto 41x41:");
-disp(double(img_redimen));
 
 % exibe a imagem binária e recortada do labirinto redimensionada para 41x41
 figure(2);
@@ -31,10 +26,10 @@ if isempty(entrada_candidata) || isempty(saida_candidata)
 end
 
 % define as coordenadas no formato [linha, coluna]
-entrada = [entrada_candidata(1), 1];
-saida = [saida_candidata(end), size(img_redimen, 2)];
+entrada = [entrada_candidata, 1];
+saida = [saida_candidata, size(img_redimen, 2)];
 
-% printa as coordenadas da entrada e da saída
+% exibe as coordenadas da entrada e da saída
 disp("Entrada identificada [linha, coluna]:");
 disp(entrada);
 
@@ -44,11 +39,11 @@ disp(saida);
 % exibe o labirinto com a entrada e a saída identificadas
 figure(3);
 imshow(img_redimen);
-title("Imagem labirinto em 41x41: entrada e saída identificadas");
+title("Imagem labirinto com entrada e saída identificadas");
 hold on;
 
-plot(entrada(2), entrada(1), "go", "MarkerSize", 10, "LineWidth", 2);
-plot(saida(2), saida(1), "ro", "MarkerSize", 10, "LineWidth", 2);
+plot(entrada(2), entrada(1), "g.", "MarkerSize", 22);
+plot(saida(2), saida(1), "r.", "MarkerSize", 22);
 
 % Guarda a figura final em formato JPEG
 print(gcf, "labirinto_entrada_saida.jpg", "-djpeg", "-S600,600")
