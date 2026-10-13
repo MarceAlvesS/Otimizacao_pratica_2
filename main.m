@@ -31,8 +31,15 @@ if isempty(entrada_candidata) || isempty(saida_candidata)
 end
 
 % define as coordenadas no formato [linha, coluna]
-entrada = [entrada_candidata(1), 1]
-saida = [saida_candidata(end), size(img_redimen, 2)]
+entrada = [entrada_candidata(1), 1];
+saida = [saida_candidata(end), size(img_redimen, 2)];
+
+% printa as coordenadas da entrada e da saída
+disp("Entrada identificada [linha, coluna]:");
+disp(entrada);
+
+disp("Saída identificada [linha, coluna]:");
+disp(saida);
 
 % exibe o labirinto com a entrada e a saída identificadas
 figure(3);
