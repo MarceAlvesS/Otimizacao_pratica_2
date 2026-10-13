@@ -14,7 +14,7 @@ function [img_binaria, img_redimen] = processar_imagem(img)
     % SEPARA A MATRIZ DO LABIRINTO DA BORDA BRANCA AO REDOR DA IMAGEM
 
     % identifica os pixels escuros
-    pixels_labirinto = img_binaria == 0;
+    pixels_labirinto = (img_binaria == 0);
 
     % encontra linhas e colunas que possuem pixels escuros
     linhas = find(any(pixels_labirinto, 2));
