@@ -43,13 +43,6 @@ if img_redimen(saida(1), saida(2)) ~= 1
     error("A saída não corresponde a um corredor.");
 end
 
-% exibe as coordenadas da entrada e da saída
-disp("Entrada identificada [linha, coluna]:");
-disp(entrada);
-
-disp("Saída identificada [linha, coluna]:");
-disp(saida);
-
 % exibe o labirinto com a entrada e a saída identificadas
 figure(3);
 imshow(img_redimen);
