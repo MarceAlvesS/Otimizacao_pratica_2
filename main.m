@@ -56,8 +56,8 @@ imshow(img_redimen);
 title("Imagem labirinto em 41x41: entrada e saída identificadas");
 hold on;
 
-plot(entrada(2), entrada(1), "go", "MarkerSize", 22); ## MarkerSize quando salva fica 2x menor que no plot
-plot(saida(2), saida(1), "ro", "MarkerSize", 22); ## MarkerSize quando salva fica 2x menor que no plot
+plot(entrada(2), entrada(1), "go", "MarkerSize", 10, "LineWidth", 2);
+plot(saida(2), saida(1), "ro", "MarkerSize", 10, "LineWidth", 2);
 
 % Guarda a figura final em formato JPEG
 print(gcf, "labirinto_entrada_saida.jpg", "-djpeg", "-S600,600")
