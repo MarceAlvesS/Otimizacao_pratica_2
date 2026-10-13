@@ -1,14 +1,15 @@
-function [edges] = path(start, destination, vertices, previous)
+function [edges] = otimal_path(start, destination, vertices, previous)
 
     p = destination;
 
     while p ~= start
       ind = find(vertices == p(end), 1);
+
       if isempty(ind) || previous(ind) == p(end)
         error('Caminho não encontrado');
       endif
 
-      p(end+1) = previous(ind);
+      p(end+1) = vertices(previous(ind));
     endwhile
 
     p = fliplr(p);

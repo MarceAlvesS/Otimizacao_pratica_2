@@ -3,12 +3,12 @@ function [distance, previus] = dijkstra(G, s) %G é conjunto de v(vertices) e e(
   distance = inf(1, n);
   previus = zeros(1, n) - 1;
 
-  index = find(G.v ==  s);
+  index = find(G.v == s);
   distance(index) = 0;
   previus(index) = index;
   looked = zeros(1, n);
 
-  while any(looked) == 0
+  while all(looked) ~= 1
     m = inf;
     index = -1;
     for i = 1:n
