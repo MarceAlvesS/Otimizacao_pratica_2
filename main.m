@@ -51,7 +51,7 @@ disp("Saída identificada [linha, coluna]:");
 disp(saida);
 
 % exibe o labirinto com a entrada e a saída identificadas
-figure(1);
+figure(3);
 imshow(img_redimen);
 title("Imagem labirinto em 41x41: entrada e saída identificadas");
 hold on;
