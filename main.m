@@ -34,15 +34,6 @@ end
 entrada = [entrada_candidata(1), 1]
 saida = [saida_candidata(end), size(img_redimen, 2)]
 
-% verifica se as posições correspondem a corredores
-if img_redimen(entrada(1), entrada(2)) ~= 1
-    error("A entrada não corresponde a um corredor.");
-end
-
-if img_redimen(saida(1), saida(2)) ~= 1
-    error("A saída não corresponde a um corredor.");
-end
-
 % exibe o labirinto com a entrada e a saída identificadas
 figure(3);
 imshow(img_redimen);
