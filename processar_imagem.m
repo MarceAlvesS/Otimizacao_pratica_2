@@ -53,6 +53,6 @@ function [img_binaria, img_redimen] = processar_imagem(img)
     disp(size(img_redimen));
 
     % converte para valores numericos 0 e 1
-    img_redimen = double(img_redimen);
+    img_redimen = double(img_redimen >= 0.5);
 
 end
