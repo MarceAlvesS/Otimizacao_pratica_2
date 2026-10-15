@@ -1,4 +1,4 @@
-function [I] = grafo_plot(E, n, img, dist, name, fig = 1)
+function [I] = grafo_plot(E, n, img, dist, name, fig = 1, entrada = -1, saida = -1)
   if nargin < 4
     dist = 17.26;
   endif
@@ -19,8 +19,18 @@ function [I] = grafo_plot(E, n, img, dist, name, fig = 1)
   imshow(img);
   hold on;
 
-  plot(x, y, "-b.", "MarkerSize", 22);
-  print(gcf, name, "-djpeg", "-S800,800");
+  plot(x, y, "-b.", "MarkerSize", 7);
+
+  if entrada != -1
+    plot(entrada(2), entrada(1), "g.", "MarkerSize", 7);
+  endif
+  if saida != -1
+    plot(saida(2), saida(1), "r.", "MarkerSize", 7);
+  endif
+
+  ax = gca();
+  frame = getframe(ax);
+  imwrite(frame.cdata, name);
 
   hold off;
 end
