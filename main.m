@@ -45,7 +45,7 @@ numero_vertices_total = c_
 [l_, c_] = size(G.e);
 numero_arestas_total = l_/2
 
-grafo_plot(G.e(:, [1, 2]), G.n, img_redimen, 1, "Grafo_Imagem.jpg", 3, entrada, saida);
+grafo_plot(G.e(:, [1, 2]), G.n, img_redimen, "Grafo_Imagem.jpg", 1, 3, entrada, saida);
 
 
 % Busca do caminho minimo por Dijkstra e sua plotagem
@@ -57,7 +57,7 @@ saida_id = (saida(1) - 1) * G.n + saida(2);
 edges = otimal_path(entrada_id, saida_id, G.v, prev);
 
 
-grafo_plot(edges, G.n, img_redimen, 1, "Grafo_Caminho_Otimal.jpg", 4, entrada, saida);
+grafo_plot(edges, G.n, img_redimen, "Grafo_Caminho_Otimal.jpg", 1, 4, entrada, saida);
 
 [l_, c_] = size(edges);
 numero_arestas_caminho_minimo = l_/2
@@ -65,4 +65,4 @@ numero_vertices_caminho_minimo = numero_arestas_caminho_minimo + 1
 
 % Sobreposição do grafo + caminho minimo
 
-grafo_plot(G.e(:, [1, 2]), G.n, img_redimen, 1, "Grafo_Completo.jpg", 5, entrada, saida, edges);
+grafo_plot(G.e(:, [1, 2]), G.n, img_redimen, "Grafo_Completo.jpg", 1, 5, entrada, saida, edges);

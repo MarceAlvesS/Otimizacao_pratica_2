@@ -1,7 +1,4 @@
-function [I] = grafo_plot(E, n, img, dist, name, fig = 1, entrada = -1, saida = -1, E2 = [])
-  if nargin < 4
-    dist = 17.26;
-  endif
+function [I] = grafo_plot(E, n, img, name, dist = 17.26, fig = 1, entrada = -1, saida = -1, E2 = [])
 
   [n_arestas, aux] = size(E);
   x = [];
