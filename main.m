@@ -53,3 +53,7 @@ edges = otimal_path(entrada_id, saida_id, G.v, prev);
 
 grafo_plot(edges, G.n, img_redimen, 1, "Grafo_Caminho_Otimal.jpg", 4, entrada, saida);
 
+
+% Sobreposição do grafo + caminho minimo
+
+grafo_plot(G.e(:, [1, 2]), G.n, img_redimen, 1, "Grafo_Completo.jpg", 5, entrada, saida, edges);

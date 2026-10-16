@@ -1,4 +1,4 @@
-function [I] = grafo_plot(E, n, img, dist, name, fig = 1, entrada = -1, saida = -1)
+function [I] = grafo_plot(E, n, img, dist, name, fig = 1, entrada = -1, saida = -1, E2 = [])
   if nargin < 4
     dist = 17.26;
   endif
@@ -26,6 +26,27 @@ function [I] = grafo_plot(E, n, img, dist, name, fig = 1, entrada = -1, saida = 
   endif
   if saida != -1
     plot(saida(2), saida(1), "r.", "MarkerSize", 7);
+  endif
+
+  [n_arestas, aux] = size(E2);
+  x = [];
+  y = [];
+
+  for aresta = 1:n_arestas
+    v1 = inversa(E2(aresta, 1), n, dist);
+    v2 = inversa(E2(aresta, 2), n, dist);
+
+    x = [x, v1(1), v2(1), nan];
+    y = [y, v1(2), v2(2), nan];
+  end
+
+  plot(x, y, "-r.", "MarkerSize", 7);
+
+  if entrada != -1
+    plot(entrada(2), entrada(1), "g.", "MarkerSize", 7);
+  endif
+  if saida != -1
+    plot(saida(2), saida(1), "g.", "MarkerSize", 7);
   endif
 
   ax = gca();
