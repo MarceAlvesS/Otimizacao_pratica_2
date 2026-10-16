@@ -39,6 +39,12 @@ saida = [saida_candidata, size(img_redimen, 2)]
 
 M = double(img_redimen)
 G = matriz_grafo(M);
+
+[l_, c_] = size(G.v);
+numero_vertices_total = c_
+[l_, c_] = size(G.e);
+numero_arestas_total = l_/2
+
 grafo_plot(G.e(:, [1, 2]), G.n, img_redimen, 1, "Grafo_Imagem.jpg", 3, entrada, saida);
 
 
@@ -53,6 +59,9 @@ edges = otimal_path(entrada_id, saida_id, G.v, prev);
 
 grafo_plot(edges, G.n, img_redimen, 1, "Grafo_Caminho_Otimal.jpg", 4, entrada, saida);
 
+[l_, c_] = size(edges);
+numero_arestas_caminho_minimo = l_/2
+numero_vertices_caminho_minimo = numero_arestas_caminho_minimo + 1
 
 % Sobreposição do grafo + caminho minimo
 

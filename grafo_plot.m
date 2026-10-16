@@ -39,7 +39,7 @@ function [I] = grafo_plot(E, n, img, dist, name, fig = 1, entrada = -1, saida = 
     plot(entrada(2), entrada(1), "g.", "MarkerSize", 7);
   endif
   if saida != -1
-    plot(saida(2), saida(1), "y.", "MarkerSize", 7);
+    plot(saida(2), saida(1), "k.", "MarkerSize", 7);
   endif
 
   ax = gca();
