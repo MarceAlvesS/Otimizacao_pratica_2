@@ -3,7 +3,7 @@ function [edges] = otimal_path(start, destination, vertices, previous)
     p = destination;
 
     while p ~= start
-      ind = find(vertices == p(end), 1);
+      ind = binary_search(vertices, p(end));
 
       if isempty(ind) || previous(ind) == p(end)
         error('Caminho não encontrado');
@@ -14,13 +14,37 @@ function [edges] = otimal_path(start, destination, vertices, previous)
 
     p = fliplr(p);
 
+L = length(p);
+edges = zeros(2*(L-1), 2);
 
-    edges = [];
+for i = 1:L-1
+    u = p(i);
+    v = p(i+1);
 
-    for i = 1:length(p)-1
-      u = p(i);
-      v = p(i+1);
-      edges = [edges; u, v; v, u];
-
-    endfor
+    edges(2*i-1, :) = [u, v];
+    edges(2*i, :)   = [v, u];
 end
+
+
+function ind = binary_search(vertices, value)
+
+    left = 1;
+    right = length(vertices);
+    ind = [];
+
+    while left <= right
+
+        mid = floor((left + right) / 2);
+
+        if vertices(mid) == value
+            ind = mid;
+            return;
+        elseif vertices(mid) < value
+            left = mid + 1;
+        else
+            right = mid - 1;
+        endif
+
+    endwhile
+
+endfunction
