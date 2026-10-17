@@ -54,6 +54,10 @@ entrada_id = (entrada(1) - 1) * G.n + entrada(2);
 saida_id = (saida(1) - 1) * G.n + saida(2);
 
 [dist, prev] = dijkstra(G, entrada_id);
+
+saida_index = find(G.v == saida_id);
+saida_dist = dist(saida_index)
+
 edges = otimal_path(entrada_id, saida_id, G.v, prev);
 
 

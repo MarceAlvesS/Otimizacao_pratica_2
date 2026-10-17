@@ -8,7 +8,9 @@ function [distance, previus] = dijkstra(G, s) %G é conjunto de v(vertices) e e(
   previus(index) = index;
   looked = zeros(1, n);
 
+  inter = 0;
   while all(looked) ~= 1
+   inter += 1;
     m = inf;
     index = -1;
     for i = 1:n
@@ -36,4 +38,9 @@ function [distance, previus] = dijkstra(G, s) %G é conjunto de v(vertices) e e(
     endfor
 
   endwhile
+
+  disp("");
+  disp("Número de interações do dijkstra: ");
+  disp(inter);
+  disp("");
 end
