@@ -14,16 +14,17 @@ function [edges] = otimal_path(start, destination, vertices, previous)
 
     p = fliplr(p);
 
-L = length(p);
-edges = zeros(2*(L-1), 2);
+    L = length(p);
+    edges = zeros(2*(L-1), 2);
 
-for i = 1:L-1
-    u = p(i);
-    v = p(i+1);
+    for i = 1:L-1
+        u = p(i);
+        v = p(i+1    );
 
-    edges(2*i-1, :) = [u, v];
-    edges(2*i, :)   = [v, u];
-end
+        edges(2*i-1, :) = [u, v];
+        edges(2*i, :)   = [v, u];
+    endfor
+endfunction
 
 
 function ind = binary_search(vertices, value)
